@@ -1,22 +1,22 @@
 <template lang="pug">
-    template(v-if="typeof comp === 'string'")
-        span(
-            ref="_ref"
-            :class="getSpanClass('formatted-value--not-applicable')"
-            :title="titled ? number : undefined"
-        )
-            |{{ placeholder !== undefined ? placeholder : comp }}
-    template(v-else)
-        span(
-            ref="_ref"
-            :class="getSpanClass('formatted-value--number')"
-            :title="titled ? number : undefined"
-        )
-            |{{ comp.sign + comp.number }}
-        span.percent-sign(v-if="comp.percentSign !== ''")
-            |{{ comp.percentSign }}
-        span.order-of-magnitude(v-if="comp.orderOfMagnitude !== ''")
-            |{{ comp.orderOfMagnitude }}
+template(v-if="typeof comp === 'string'")
+    span(
+        ref="_ref"
+        :class="getSpanClass('formatted-value--not-applicable')"
+        :title="titled ? number : undefined"
+    )
+        |{{ placeholder !== undefined ? placeholder : comp }}
+template(v-else)
+    span(
+        ref="_ref"
+        :class="getSpanClass('formatted-value--number')"
+        :title="titled ? number : undefined"
+    )
+        |{{ comp.sign + comp.number }}
+    span.percent-sign(v-if="comp.percentSign !== ''")
+        |{{ comp.percentSign }}
+    span.order-of-magnitude(v-if="comp.orderOfMagnitude !== ''")
+        |{{ comp.orderOfMagnitude }}
 </template>
 
 
